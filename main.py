@@ -7,6 +7,26 @@ def cesar_cipher(text, key):
     return crypted_text
 print(cesar_cipher("chocolat", 531200000000))#53120 dans la table asci
 
+#le souci c'est une chaine de caractere donc immuable avec toute une copie de chaine de caracrter
+#donc on fait une liste qui prendra moins de palace.
+
+def cesar_cipher(text, key):
+    list_of_crypted_chars = []
+    for char in text:
+        list_of_crypted_chars.append(chr((ord(char) + key) % 1_114_112))
+    crypted_text ="".join(list_of_crypted_chars) #"" c'est la jointure ici rien , on peut mettre " "
+    #permet de chiffre malgé une clé audessus du nombre d'élément dans la table ascii
+    return crypted_text
+print(cesar_cipher("chocolat", 531200000000))
+
+#Refactorer
+
+def cesar_cipher(text, key):
+    if ...
+    return "".join([chr((ord(chr)+key)%1_114_112)])
+
+
+
 #exadecimal base 16
 
 def cesar_uncipher(crypted_message,key):
