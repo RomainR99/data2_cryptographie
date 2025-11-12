@@ -51,10 +51,11 @@ def hack_cesar_cipher(crypted_message):
 def vigenere_cipher(text,password):
     list_of_keys = [ord(char)for char in password]
     crypted_text = []
-    password_length = len(password)
-    for index, char in enumerate(text):
-        crypted_text = list_of_keys.append(chr((ord(char) + list_of_keys) % len(password)))
-    return "".join([chr((ord(chr)+list_of_keys)%len(password))])
+    for index, char in enumerate(text): #ennumerate indique"tuple", index du charatere + charactere
+        current_key = list_of_keys[index %len(list_of_keys)]
+        #on chiffre à l'aide de la current_key et je le rajoute à ma liste
+        crypted_text.append(cesar_cipher(char,current_key))
+    return "".join(crypted_text) #il faut join crypted_text
     
 
 def vigenere_uncipher(text,password):
