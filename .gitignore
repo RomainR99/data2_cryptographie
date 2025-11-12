@@ -3,6 +3,9 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# On prend pas les fichier Excel
+*.csv 
+
 # C extensions
 *.so
 
