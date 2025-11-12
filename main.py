@@ -42,5 +42,24 @@ def hack_cesar_cipher(crypted_message):
         if possible_uncryption[0] in string.printabal: #taille de la table string.principal contient 100 élément au lieu de 1_114_112 donc plus rapide à décoder
             print(possible_key)
             print(cesar_unicipher(crypted_message, possible_key))#donne tous les décodage possible
-            print(_""*20)
-	
+            print(""*20)
+
+#Chiffrement de Vigenere	
+# def convert_password_to_list_of_keys(password):
+ #   return [ord(char)for char in password]
+#print(convert_password_to_list_of_keys("Azerty12345"))
+def vigenere_cipher(text,password):
+    list_of_keys = [ord(char)for char in password]
+    crypted_text = []
+    password_length = len(password)
+    for index, char in enumerate(text):
+        crypted_text = list_of_keys.append(chr((ord(char) + list_of_keys) % len(password)))
+    return "".join([chr((ord(chr)+list_of_keys)%len(password))])
+    
+
+def vigenere_uncipher(text,password):
+    return vigenere_cipher(text, -password)
+
+            
+           
+
